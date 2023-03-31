@@ -1,0 +1,264 @@
+*
+    padding: 0
+    margin: 0
+
+@import "variables"
+@mixin txt($fw, $fs, $lh, $ta, $ft-family)
+    font-family: $ft-family, sans-serif
+    color: $txtcolor
+    font-style: normal
+    line-height: $lh
+    font-weight: $fw
+    font-size: $fs
+    text-align: $ta
+
+@mixin btn ($bg-color, $text-color)
+    display: inline-block
+    padding: 15px 30px
+    color: $text-color
+    background-color: $bg-color
+    border: none
+    border-radius: 5px
+    cursor: pointer
+    &:hover
+        background-color: darken($bg-color, 10%)
+        transition: ease 0.15s
+    &:active
+        background-color: darken($bg-color, 20%)
+        transition: ease 0.15s
+
+.center
+    max-width: $site-width
+    width: 100%
+    margin: 0 auto
+
+.top-page
+    background-color: #08101D
+    padding: 0 0 99px 0
+
+.header
+    padding: 39px 0
+    margin: 0 0 160px 0
+    background-color: #040C1A
+
+/* =========MENU======== */
+
+.menu-list
+    display: flex
+    justify-content: center
+    gap: 40px
+    &_item
+        list-style: none
+        a
+            text-decoration: none
+            @include txt(600, 16px, 22px, center, 'Open Sans')
+
+/* =========END MENU======== */
+
+.top-content
+    display: flex
+    justify-content: space-between
+    margin: 0 auto 197px auto
+    &-photo
+        display: block
+
+.top-about
+    width: 100%
+    max-width: 604px
+    &-subtitle
+        margin: 0 0 10px 0
+        @include txt(600, 18px, 29px, start, 'Open Sans')
+        text-transform: uppercase
+        color: #3A68B8
+    &-title
+        margin: 0 0 40px 0
+        @include txt(800, 55px, 71px, start, 'Open Sans')
+    &-txt
+        margin: 0 0 50px 0
+        @include txt(600, 18px, 29px, start, 'Open Sans')
+        opacity: 0.7
+    &-btn
+        @include txt(600, 16px, 22px, center, 'Open Sans')
+        @include btn(#3A68B8, #fff)
+        &:first-child
+            margin-right: 20px
+
+.top-logos
+    &-list
+        list-style: none
+        display: flex
+        justify-content: space-between
+    &-link
+        text-decoration: none
+        & img
+            display: block
+
+.content
+    background-color: #020A18
+
+/* ========= second-frame ========== */
+
+.second-frame
+    display: flex
+    padding-top: 157px
+    margin-bottom: 264px
+    box-sizing: border-box
+    &-item
+        justify-content: space-between
+        width: 100%
+        &:last-child
+            display: flex
+            justify-content: center
+            flex-direction: column
+        &-photo
+            display: block
+            max-height: 548px
+            margin-right: 68px
+        &-header
+            max-width: 485px
+            width: 100%
+            @include txt(700, 38px, 52px, start,'Open Sans')
+            margin-bottom: 30px
+        &-txt
+            max-width: 460px
+            @include txt(600, 16px, 26px, start, 'Open Sans')
+            opacity: 0.7
+            margin-bottom: 50px
+    &-btn
+        @include txt(600, 16px, 22px, center, 'Open Sans')
+        @include btn(#3A68B8, #fff)
+
+/* ========= second-frame END ========== */
+
+/* ========= advantages ========== */
+
+.advantages
+    display: grid
+    grid-template-columns: repeat(3, 362px)
+    gap: 30px
+    &-item
+        padding: 30px
+        box-sizing: border-box
+        background-color: #132035
+        border-radius: 10px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 30px
+        &-photo
+            width: 98px
+            height: 103px
+            background-image: url('../img/adventages-item-photo-1.png')
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+        &-big
+            grid-column: span 2
+            grid-row: span 2
+            justify-content: flex-start
+            gap: 60px
+        &-title
+            max-width: 302px
+            width: 100%
+            @include txt(700, 25px, 31px, center, 'Open Sans')
+            opacity: 0.7
+            word-break: break-all
+        &-txt
+            max-width: 302px
+            width: 100%
+            @include txt(600, 16px, 26px, center, 'Open Sans')
+            opacity: 0.7
+        &:nth-child(2)>.advantages-item-photo
+            background-image: url(../img/adventages-item-photo-2.png)
+        &:nth-child(3)>.advantages-item-photo
+            background-image: url(../img/adventages-item-photo-3.png)
+        &:nth-child(5)>.advantages-item-photo
+            background-image: url(../img/adventages-item-photo-5.png)
+        &:nth-child(6)>.advantages-item-photo
+            background-image: url(../img/adventages-item-photo-6.png)
+
+.advantages-item-big>.advantages-item-photo
+    width: 306px
+    height: 322px
+
+.advantages-item-big>.advantages-item-title,
+.advantages-item-big>.advantages-item-txt
+    max-width: 694px
+    margin: 0
+
+/* ========= END advantages ========== */
+
+/* ========= About ========== */
+
+.about
+    display: flex
+    margin-top: 243px
+    padding-bottom: 221px
+    box-sizing: border-box
+    &-item
+        justify-content: space-between
+        width: 100%
+        &:first-child
+            display: flex
+            justify-content: center
+            flex-direction: column
+            margin-right: 25px
+        &-header
+            max-width: 548px
+            width: 100%
+            flex-wrap: wrap
+            @include txt(700, 40px, 52px, start, 'Open Sans')
+            margin-bottom: 40px
+        &-txt
+            max-width: 460px
+            @include txt(600, 16px, 26px, start,'Open Sans')
+            opacity: 0.7
+            margin-bottom: 20px
+        &-img
+            display: block
+            max-height: 573px
+
+/* ========= END about ========== */
+
+/* ========= footer ========== */
+
+.footer
+    background-color: #040C1A
+    &-wrp
+        display: flex
+        justify-content: space-between
+        gap: 30.18px
+        padding: 48px 0
+    &-item
+        max-width: 362px
+        width: 100%
+        box-sizing: border-box
+        &-header
+            @include txt(500, 16px, 19px, start,'Roboto')
+            // font-family: 'Roboto', 
+            margin-bottom: 33px
+        &-wrp-txt
+            display: flex
+            gap: 10px
+            max-width: 283px
+            width: 100%
+            box-sizing: border-box
+        &-txt
+            @include txt(500, 14px, 16px, start, 'Roboto')
+            // font-family: 'Roboto', 
+            margin-bottom: 24px
+    &-icons
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        max-width: 100px
+        font-size: 15px
+
+.italic
+    max-width: 261px
+    @include txt(100, 14px, 16px, start, 'Roboto')
+    font-style: italic
+    opacity: 0.6
+
+/* ========= END footer ========== */
